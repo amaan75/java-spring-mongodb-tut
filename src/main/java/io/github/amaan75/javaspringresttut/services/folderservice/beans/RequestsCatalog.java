@@ -8,6 +8,8 @@ import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Set;
+
 /** @author amangulati (@amaan75.github) created on: 04/07/20 */
 @Data
 @Accessors(chain = true)
@@ -15,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Folder {
-  @Id private String id;
-  private String folderName;
+public class RequestsCatalog {
+  @Id private String folderName;
+  private Set<Requests> requests;
 }
