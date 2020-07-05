@@ -27,4 +27,8 @@ public class ResponseWrapper<T> {
   public static <T> ResponseWrapper<T> successResponse(T data, HttpStatus status) {
     return new ResponseWrapper<>(data, fromHttpStatus(status));
   }
+
+  public static <T> ResponseWrapper<T> clientErrorResponse() {
+    return new ResponseWrapper<>(null, fromHttpStatus(HttpStatus.BAD_REQUEST));
+  }
 }
